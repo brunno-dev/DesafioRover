@@ -1,28 +1,18 @@
-/*
-Se virar para a esquerda fica na posição OESTE (W)
-Se virar para a direita fica na posição LESTE (E)
-
-*/
-
-/*  AO PEDIR PARA SEGUIR EM FRENTE:
-    Se a direção for NORTE(N) y-1
-    Se a direção for OESTE(W) x-1
-    Se a direção for SUL(S) y+1
-    Se a direção for LESTE(E) x+1
-*/
+/*Parâmetros dos Robôs */
 const rover = {
   direction: "N",
   position: [0, 0],
   travelLog: []
 };
 
-const rover2 = {
+const roverTwo = {
   direction: "N",
   position: [10, 10],
   travelLog: []
 };
 
-// turnLeft function
+
+/*Direção exata ao virar para a esquerda */
 function turnLeft(rover) {
   switch (rover.direction) {
     case "N":
@@ -41,6 +31,7 @@ function turnLeft(rover) {
   console.log(`turnLeft was called! Direction is: [${rover.direction}]`);
 }
 
+/*Direção exata ao virar para a direita */
 function turnRight(rover) {
   switch (rover.direction) {
 
@@ -63,6 +54,7 @@ function turnRight(rover) {
   console.log(`turnRight was called! Direction is: [${rover.direction}]`);
 }
 
+/*Função que move para frente e cria limites no grid 10x10*/
 function moveForward(rover) {
   switch (rover.direction) {
 
@@ -102,6 +94,7 @@ function moveForward(rover) {
   }
 }
 
+/*Função que move para trás e cria limites no grid 10x10 */
 function moveBackward(rover) {
   switch (rover.direction) {
 
@@ -141,7 +134,7 @@ function moveBackward(rover) {
   }
 }
 
-
+/*Função que chama os comandos para o robô virar (r,l) ou andar (f,b)*/
 function commandList(orders) {
   for (let i = 0; i < orders.length; i++) {
     let order = orders[i];
@@ -167,4 +160,5 @@ function commandList(orders) {
     }
   }
 }
+/*Chamada para movimentação do robô */
 commandList("ffzzyrfb")
