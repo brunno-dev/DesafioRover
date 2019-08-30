@@ -177,14 +177,14 @@ function moveBackward(nameRover) { // mesmo passo a passo do moveForward
   const moveY = nameRover.y;
 
   const otherRoverX = function () {
-    if (nameRover === "Tec") {
+    if (nameRover === Tec) {
       return (Toy.x);
     } else {
       return (Tec.x);
     }
   };
   const otherRoverY = function () {
-    if (nameRover === "Tec") {
+    if (nameRover === Tec) {
       return (Toy.y);
     } else {
       return (Tec.y);
